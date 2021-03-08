@@ -1,4 +1,4 @@
-﻿namespace AvaFunc.Core
+namespace AvaFunc.Core
 
 module Database =
     open LiteDB
@@ -12,7 +12,7 @@ module Database =
 
     let dbpath =
         let appData = Environment.GetFolderPath Environment.SpecialFolder.LocalApplicationData
-        let folder = sprintf "%s\\AvaFunc" appData
+        let folder = Path.Combine (appData, "AvaFunc")
         match Directory.Exists folder with
         | true -> ()
         | false -> Directory.CreateDirectory folder |> ignore
